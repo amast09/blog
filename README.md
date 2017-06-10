@@ -1,2 +1,2 @@
-# blog
-Hugo Blog
+# Aaron Mast's Personal Blog 
+Because every developer deserves one.
