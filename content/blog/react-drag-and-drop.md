@@ -18,7 +18,7 @@ This seemed like a great library to use because
 * It is testable
 * It had almost 6000 stars on their Github
 
-React DnD does come with pre-made components.
+React DnD does not come with pre-made components.
 So I decided to create my own generic order-able list component which I am going to show in this post.
 
 Everything I explain and mention can be referenced in the example Github repository that pairs with this post here.
