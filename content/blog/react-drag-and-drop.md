@@ -1,7 +1,7 @@
 +++
 date = "2017-06-24T11:14:35-05:00"
 title = "React Drag and Drop"
-description = "Implementing a simple generic order-able list using react the react-dnd library"
+description = "Implementing a simple generic order-able list using react-dnd"
 tags = [ "react", "react-dnd", "Javascript" ]
 categories = [ "Development", "Javascript", "How To" ]
 +++
