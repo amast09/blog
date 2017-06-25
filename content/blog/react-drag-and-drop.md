@@ -21,6 +21,8 @@ This seemed like a great library to use because
 React DnD does not come with pre-made components.
 So I decided to create my own generic order-able list component which I am going to show in this post.
 
+Here is the end [result](https://codepen.io/anon/pen/JJrJom).
+
 Everything I explain and mention can be referenced in the example Github repository that pairs with this post here.
 
 [Example React Orderable List](https://github.com/amast09/react-orderable-list)
