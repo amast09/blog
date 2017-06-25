@@ -193,7 +193,7 @@ The extra logic we added is in the `endDrag` function
 ```js
 endDrag (props, monitor) {
     const { id: droppedId, originalIndex } = monitor.getItem();
-    
+
     if (!monitor.didDrop()) {
       props.moveItem(droppedId, originalIndex);
     } else {
@@ -240,14 +240,14 @@ Our render function is the following,
 render() {
     const { element, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
     let item;
-    
+
     if (element.handleElementIndex !== undefined) {
       element.children[element.handleElementIndex] = connectDragSource(element.children[element.handleElementIndex]);
       item = connectDragPreview(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
     } else {
       item = connectDragSource(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
     }
-    
+
     return item;
 }
 ```
@@ -267,7 +267,7 @@ export default _.flow(
 
 ```
 
-It wires together our draggable component with the DragSource and DragTarget code we configured. 
+It wires together our draggable component with the DragSource and DragTarget code we configured.
 
 Now we will create our Orderable List component,
 
@@ -399,7 +399,7 @@ Simple function to move the item to the specified index.
 findItem(id) {
     const { items } = this.state;
     const item = _.find(items, c => c.id === id) || {};
-    
+
     return {
       item,
       index: items.indexOf(item),
@@ -446,4 +446,93 @@ export default MovieItem
 
 This is a simple visual component just displaying data with no logic.
 
-Next we will connect 
+Now we will make our customized list component.
+
+`MovieItemList.jsx`
+
+```js
+
+import React from 'react';
+import _ from 'lodash';
+import OrderableList from './OrderableList';
+import MovieItem from './MovieItem';
+
+class MovieItemList extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { movies: [] };
+  }
+
+  movieRankUpdate (reRankedMovie) {
+    console.log(reRankedMovie);
+  }
+
+  mapMovieToDraggableMovieElement (movie) {
+    return {
+      id: movie.id,
+      element: {
+        children: [
+          <MovieItem key={`movie-${movie.id}__container`} movie={movie}/>,
+          <span key={`movie-${movie.id}__icon`}>{" <>"}</span>
+        ],
+        parentWrapperTag: 'div',
+        handleElementIndex: 1
+      }
+    };
+  };
+
+  componentDidMount () {
+
+    const movies = [
+      {
+        id: 1,
+        title: 'Step Brothers',
+        year: '2008',
+        genre: 'Comedy'
+      },
+      {
+        id: 2,
+        title: 'Elf',
+        year: '2003',
+        genre: 'Holiday'
+      },
+      {
+        id: 3,
+        title: 'Old School',
+        year: '2003',
+        genre: 'Comedy'
+      },
+      {
+        id: 4,
+        title: 'Anchorman: The Legend of Ron Burgundy',
+        year: '2004',
+        genre: 'Comedy'
+      },
+      {
+        id: 5,
+        title: 'Stranger than Fiction',
+        year: '2006',
+        genre: 'Romantic Comedy'
+      }
+    ];
+
+    this.setState({ movies: _.map(movies, this.mapMovieToDraggableMovieElement) });
+
+  };
+
+  render () {
+    return <OrderableList items={this.state.movies} dropHandler={this.movieRankUpdate} containingTag="div"/>;
+  }
+
+}
+
+export default MovieItemList;
+```
+
+We have hopefully achieved our goal of having a simple component to interface with. All we needed to do was supply our list elements, container tag, and drop handler.
+Anytime one of our list elements is dropped into a new position our drop handler will be called with it's ID and new position.
+
+To wrap up, we created a generic draggable item, a generic draggable list and used those 2 elements to create a custom draggable movie list.
+
+I hope my first post was helpful and easy to understand. Please let me know if you have any suggestions or improvements. Glad to accept PR's against the example repository.
