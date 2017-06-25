@@ -89,7 +89,9 @@ Now we will create our Draggable component for our orderable list,
 
 ```jsx
 
+
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash'
 import { DragSource, DropTarget } from 'react-dnd';
 
@@ -145,14 +147,15 @@ const dragSourceCollect = (connect, monitor) => ({
 class DraggableItem extends Component {
 
   render() {
-    const { element, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
+    const { element, isDragging, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
+    const opacity = isDragging ? 0 : 1;
     let item;
 
     if (element.handleElementIndex !== undefined) {
       element.children[element.handleElementIndex] = connectDragSource(element.children[element.handleElementIndex]);
-      item = connectDragPreview(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
+      item = connectDragPreview(connectDropTarget(<element.parentWrapperTag style={{ opacity }} key={id}>{element.children}</element.parentWrapperTag>));
     } else {
-      item = connectDragSource(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
+      item = connectDragSource(connectDropTarget(<element.parentWrapperTag style={{ opacity }} key={id}>{element.children}</element.parentWrapperTag>));
     }
 
     return item;
@@ -161,25 +164,26 @@ class DraggableItem extends Component {
 }
 
 DraggableItem.propTypes = {
-  connectDropTarget: React.PropTypes.func.isRequired,
-  connectDragSource: React.PropTypes.func.isRequired,
-  connectDragPreview: React.PropTypes.func,
-  isDragging: React.PropTypes.bool.isRequired,
-  id: React.PropTypes.any.isRequired,
-  element: React.PropTypes.shape({
-    children: React.PropTypes.arrayOf(React.PropTypes.element),
-    parentWrapperTag: React.PropTypes.string.isRequired,
-    handleElementIndex: React.PropTypes.number
+  connectDropTarget: PropTypes.func.isRequired,
+  connectDragSource: PropTypes.func.isRequired,
+  connectDragPreview: PropTypes.func,
+  isDragging: PropTypes.bool.isRequired,
+  id: PropTypes.any.isRequired,
+  element: PropTypes.shape({
+    children: PropTypes.arrayOf(PropTypes.element),
+    parentWrapperTag: PropTypes.string.isRequired,
+    handleElementIndex: PropTypes.number
   }).isRequired,
-  moveItem: React.PropTypes.func.isRequired,
-  findItem: React.PropTypes.func.isRequired,
-  itemMoved: React.PropTypes.func.isRequired
+  moveItem: PropTypes.func.isRequired,
+  findItem: PropTypes.func.isRequired,
+  itemMoved: PropTypes.func.isRequired
 };
 
 export default _.flow(
   DragSource('Item', itemSource, dragSourceCollect),
   DropTarget('Item', itemTarget, dropTargetCollect)
 )(DraggableItem);
+
 
 ```
 
@@ -238,17 +242,18 @@ Our render function is the following,
 
 ```jsx
 render() {
-    const { element, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
-    let item;
+  const { element, isDragging, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
+  const opacity = isDragging ? 0 : 1;
+  let item;
 
-    if (element.handleElementIndex !== undefined) {
-      element.children[element.handleElementIndex] = connectDragSource(element.children[element.handleElementIndex]);
-      item = connectDragPreview(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
-    } else {
-      item = connectDragSource(connectDropTarget(<element.parentWrapperTag key={id}>{element.children}</element.parentWrapperTag>));
-    }
+  if (element.handleElementIndex !== undefined) {
+    element.children[element.handleElementIndex] = connectDragSource(element.children[element.handleElementIndex]);
+    item = connectDragPreview(connectDropTarget(<element.parentWrapperTag style={{ opacity }} key={id}>{element.children}</element.parentWrapperTag>));
+  } else {
+    item = connectDragSource(connectDropTarget(<element.parentWrapperTag style={{ opacity }} key={id}>{element.children}</element.parentWrapperTag>));
+  }
 
-    return item;
+  return item;
 }
 ```
 
@@ -276,6 +281,7 @@ Now we will create our Orderable List component,
 ```jsx
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import update from 'react/lib/update';
 import { DropTarget } from 'react-dnd';
 import DraggableItem from './DraggableItem';
@@ -347,19 +353,19 @@ class OrderableList extends Component {
 }
 
 OrderableList.propTypes = {
-  connectDropTarget: React.PropTypes.func.isRequired,
-  items: React.PropTypes.arrayOf(
-    React.PropTypes.shape({
-      id: React.PropTypes.number,
-      element: React.PropTypes.shape({
-        children: React.PropTypes.arrayOf(React.PropTypes.element),
-        parentWrapperTag: React.PropTypes.string.isRequired,
-        handleElementIndex: React.PropTypes.number
+  connectDropTarget: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      element: PropTypes.shape({
+        children: PropTypes.arrayOf(PropTypes.element),
+        parentWrapperTag: PropTypes.string.isRequired,
+        handleElementIndex: PropTypes.number
       }).isRequired,
     })
   ).isRequired,
-  dropHandler: React.PropTypes.func,
-  containingTag: React.PropTypes.string.isRequired
+  dropHandler: PropTypes.func,
+  containingTag: PropTypes.string.isRequired
 };
 
 export default DropTarget('Item', itemTarget, dropTargetCollect)(OrderableList);
@@ -425,6 +431,7 @@ We want to create the element that will be draggable first. A simple movie item 
 
 ```jsx
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MovieItem = props => (
   <div key={`movie-item__${props.id}`}>
@@ -435,10 +442,10 @@ const MovieItem = props => (
 );
 
 MovieItem.propTypes = {
-  id: React.PropTypes.number.isRequired,
-  title: React.PropTypes.string.isRequired,
-  year: React.PropTypes.string.isRequired,
-  genre: React.PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired
 };
 
 export default MovieItem
