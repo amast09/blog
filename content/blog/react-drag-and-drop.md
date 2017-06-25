@@ -68,7 +68,7 @@ The first step we need to take to get the React DnD working with our React app i
 
 [DragDropContextProvider](http://react-dnd.github.io/react-dnd/docs-drag-drop-context-provider.html)
 
-```html
+```jsx
 <DragDropContextProvider backend={HTML5Backend}>
     <div className="App">
       <div className="App-header">
@@ -87,7 +87,7 @@ Now we will create our Draggable component for our orderable list,
 
 `DraggableItem.jsx`
 
-```js
+```jsx
 
 import React, { Component } from 'react';
 import _ from 'lodash'
@@ -190,7 +190,7 @@ Here is React DnD's documentation for [DragSource](http://react-dnd.github.io/re
 
 The extra logic we added is in the `endDrag` function
 
-```js
+```jsx
 endDrag (props, monitor) {
     const { id: droppedId, originalIndex } = monitor.getItem();
 
@@ -209,7 +209,7 @@ If it was dropped, propagate that event into the hook we provided to the user of
 
 Here is React DnD's documentation for [DropTarget](http://react-dnd.github.io/react-dnd/docs-drop-target.html)
 
-```js
+```jsx
 const itemTarget = {
 
   canDrop () {
@@ -236,7 +236,7 @@ The `hover (props, monitor) {` does the re-ordering of the elements when one ele
 
 Our render function is the following,
 
-```js
+```jsx
 render() {
     const { element, connectDragSource, connectDropTarget, connectDragPreview, id } = this.props;
     let item;
@@ -259,7 +259,7 @@ Which would be impossible to do if they passed in only a single element. Lastly 
 
 The last thing of note is the export command,
 
-```js
+```jsx
 export default _.flow(
   DragSource('Item', itemSource, dragSourceCollect),
   DropTarget('Item', itemTarget, dropTargetCollect)
@@ -273,7 +273,7 @@ Now we will create our Orderable List component,
 
 `OrderableList.jsx`
 
-```js
+```jsx
 
 import React, { Component } from 'react';
 import update from 'react/lib/update';
@@ -371,7 +371,7 @@ This component is only a DropTarget (we can drop other draggable elements on to 
 Here is reference to React DnD's documentation again for [DropTarget](http://react-dnd.github.io/react-dnd/docs-drop-target.html)
 
 
-```js
+```jsx
 componentWillReceiveProps(nextProps) {
   this.setState({ items: nextProps.items });
 }
@@ -379,7 +379,7 @@ componentWillReceiveProps(nextProps) {
 
 We want to update our component anytime our parent passes us new/updated items (our items may be coming in asynchronously).
 
-```js
+```jsx
 moveItem(id, atIndex) {
     const { item, index } = this.findItem(id);
     this.setState(update(this.state, {
@@ -395,7 +395,7 @@ moveItem(id, atIndex) {
 
 Simple function to move the item to the specified index.
 
-```js
+```jsx
 findItem(id) {
     const { items } = this.state;
     const item = _.find(items, c => c.id === id) || {};
@@ -413,7 +413,7 @@ Our `render() {` function just iterates over all our draggable items rendering t
 
 The last thing that we do is wrap our element into a DropTarget
 
-```js
+```jsx
 export default DropTarget('Item', itemTarget, dropTargetCollect)(OrderableList);
 ```
 
@@ -423,7 +423,7 @@ We want to create the element that will be draggable first. A simple movie item 
 
 `MovieItem.jsx`
 
-```js
+```jsx
 import React from 'react';
 
 const MovieItem = props => (
@@ -450,7 +450,7 @@ Now we will make our customized list component.
 
 `MovieItemList.jsx`
 
-```js
+```jsx
 
 import React from 'react';
 import _ from 'lodash';
