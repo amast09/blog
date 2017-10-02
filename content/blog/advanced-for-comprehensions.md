@@ -1,15 +1,15 @@
 +++
 date = "2017-07-30T11:36:35-05:00"
 title = "Advanced Scala For Comprehensions"
-description = "Using Scala for comprehensions to untangle dependant asynchronous resources"
+description = "Using Scala for comprehensions to untangle dependent asynchronous resources"
 tags = [ "Scala", "for-comprehensions", "asynchronous" ]
 categories = [ "Development", "Scala", "How To" ]
 +++
 
-Working with multiple dependant asynchronous Futures in Scala can be tough, especially when their results need to be transformed.
+Working with multiple dependent asynchronous Futures in Scala can be tough, especially when their results need to be transformed.
 Thankfully Scala has for comprehensions to help unwind your code and make it more manageable.
 
-In this post I am going to show through example how to work through an advanced dependant series of Futures.
+In this post I am going to show through example how to work through an advanced dependent series of Futures.
 
 Our fictitious problem will be calculating the average age of a movie director for a given movie rating.
 In the real world this could probably be done using straight SQL however it provides us a quick and easy to understand situation.
@@ -113,7 +113,7 @@ Here is a Github gist containing all the code from this post.
 
 https://gist.github.com/amast09/52a412ec814b613e072d20bfe8c5f487
 
-You can easily pop it into a Scala worksheet in Intellij and experiment with the code. 
+You can easily pop it into a Scala worksheet in Intellij and experiment with the code.
 
 As always, please let me know if you have any feedback, suggestions or improvements to this post or the code.
 Feel free to leave comments on the Github gist.
