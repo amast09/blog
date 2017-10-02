@@ -1,6 +1,6 @@
 +++
 date = "2017-09-30T17:34:18-04:00"
-title = "Using async.js to Juggle Asynchronous Resources"
+title = "Using async.js to Juggle Asynchronous Actions"
 description = "Using the async.js JavaScript library to flatten asynchronous callback hell"
 tags = [ "Javascript", "async.js", "asynchronous" ]
 categories = [ "Development", "Javascript", "How To" ]
