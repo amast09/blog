@@ -28,7 +28,7 @@ $ hugo server -D
 
 ## Create a new post
 ```bash
-$ hugo new posts/my-first-post.md
+$ hugo new blog/new-post.md
 ```
 
 ## Publish post
