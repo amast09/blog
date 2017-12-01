@@ -1,24 +1,28 @@
 # Aaron Mast's Personal Blog 
 Because every developer deserves one.
 
-## Install Hugo
+### Install Hugo
 [https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
 
-Then run the following,
+## Initialize Hugo Theme
 
 ```bash
-# Init the hugo installed theme
 git submodule init
 git pull --recurse-submodules
 ```
 
+## Start hugo
 ```bash
-# Start hugo
 hugo server -D
 ```
 
+## Create a new post
 ```bash
-# Create a new post
 hugo new posts/my-first-post.md
 
+```
+
+## Publish post
+```bash
+sh deploy-site.sh
 ```
