@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://aaronmastsblog.com/"
+baseurl = "https://aaronmast.dev/"
 # themesDir = "../.."
 languageCode = "en-us"
 title = "Aaron's Blog"

@@ -2,18 +2,7 @@
 Because every developer deserves one.
 
 ## Install Hugo
-[https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
-
-## Install AWS CLI and Add it to Our Path
-```bash
-$ pip install awscli --upgrade --user
-$ echo "export PATH=~/.local/bin:\$PATH" >> ~/.bashrc
-$ source ~/.bashrc
-```
-## Configure AWS User
-```bash
-$ aws configure
-```
+[Quick Install](https://gohugo.io/getting-started/installing/#quick-install)
 
 ## Initialize Hugo Theme
 ```bash
@@ -29,9 +18,4 @@ $ hugo server -D
 ## Create a new post
 ```bash
 $ hugo new blog/new-post.md
-```
-
-## Publish post
-```bash
-$ sh deploy-site.sh
 ```
