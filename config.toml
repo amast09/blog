@@ -12,7 +12,7 @@ disqusShortname = ""
 [params]
 	name = "Aaron Mast"
 	description = "A place for random musings."
-	bio = "A Software Developer living in Charleston SC"
+	bio = "A Software Engineer living in Charleston SC"
 	# Enter optionally your twitter account
 	twitter = "amast09"
 	enableRSS = false
