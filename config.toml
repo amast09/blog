@@ -4,7 +4,6 @@ defaultContentLanguage = "en"
 enableEmoji = true
 title = "Aaron's Site"
 theme = "gokarna"
-googleAnalytics = "G-7Y1RNHVW6C"
 pygmentsStyle = "monokai"
 
 
@@ -14,6 +13,15 @@ pygmentsStyle = "monokai"
 	avatarURL = "/images/profile-picture.webp"
 	enableRSS = false
   customHeadHTML = """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y1RNHVW6C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7Y1RNHVW6C');
+    </script>
     <style>
       .footer { display: none }
     </style>
