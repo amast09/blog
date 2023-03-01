@@ -11,7 +11,7 @@ pygmentsStyle = "monokai"
 [params]
 	name = "Aaron Mast"
 	description = "A Remote Software Engineer"
-	avatarURL = "/images/profile-picture.jpeg"
+	avatarURL = "/images/profile-picture.webp"
 	enableRSS = false
   customHeadHTML = """
     <style>
