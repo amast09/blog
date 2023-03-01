@@ -1,10 +1,11 @@
-+++
-date = "2017-07-30T11:36:35-05:00"
-title = "Advanced Scala For Comprehensions"
-description = "Using Scala for comprehensions to untangle dependent asynchronous resources"
-tags = [ "Scala", "for-comprehensions", "asynchronous" ]
-categories = [ "Development", "Scala", "How To" ]
-+++
+---
+date: "2017-07-30T11:36:35-05:00"
+title: "Advanced Scala For Comprehensions"
+description: "Using Scala for comprehensions to untangle dependent asynchronous resources"
+tags: [ "Scala", "for-comprehensions", "asynchronous" ]
+categories: [ "Development", "Scala", "How To" ]
+type: "post"
+---
 
 Working with multiple dependent asynchronous Futures in Scala can be tough, especially when their results need to be transformed.
 Thankfully Scala has for comprehensions to help unwind your code and make it more manageable.

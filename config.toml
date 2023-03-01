@@ -1,52 +1,100 @@
-# Site settings
 baseurl = "https://aaronmast.dev/"
-# themesDir = "../.."
 languageCode = "en-us"
-title = "Aaron's Blog"
-theme = "hugo-cactus-theme"
-# Enter your tracking code to enable Google Analytics
-googleAnalytics = "UA-101594460-1"
-# Disable comments by leaving disqusShortname empty
-disqusShortname = ""
+defaultContentLanguage = "en"
+enableEmoji = true
+title = "Aaron's Site"
+theme = "gokarna"
+googleAnalytics = "G-7Y1RNHVW6C"
+pygmentsStyle = "monokai"
+
 
 [params]
 	name = "Aaron Mast"
-	description = "A place for random musings."
-	bio = "A Software Engineer living in Charleston SC"
-	# Enter optionally your twitter account
-	twitter = "amast09"
+	description = "A Remote Software Engineer"
+	avatarURL = "/images/profile-picture.jpeg"
 	enableRSS = false
+  customHeadHTML = """
+    <style>
+      .footer { display: none }
+    </style>
+  """
 
-	# Integrate Javascript files or stylesheets by adding the url to the external assets or by
-	# linking local files with their path relative to the static folder, e.g. "css/styles.css"
-	customCSS = ['css/prism.css', 'css/custom.css']
-	customJS  = ['js/prism.js']
+[menu]
+	[[menu.main]]
+    # Unique identifier for a menu item
+    identifier = "about"
 
-	# The variables below are optionally too and can be used to
-	# translate or customize each string of the theme.
+    url = "/about/"
+    
+    # You can add extra information before the name (HTML format is supported), such as icons
+    pre = "<span data-feather='user'></span>"
 
-	# Navigation links
-	home = " home"
-	subscribe = ""
-	# Pagination links
-	olderPosts = ""
-	newerPosts = ""
-	readMore = ""
-	copyright = " "
-	# Sharing options and author information in posts
-	aboutAuthor = "I write code."
-	tweet = ""
-	share = ""
-	# 404 page
-	title404 = "Page not found"
-	subtitle404 = "The page you are looking for does not exist."
+    # You can add extra information after the name (HTML format is supported), such as icons
+    post = ""
 
-	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
-	iconFont = "mono-social"
-    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-    socialIconStyle = ""
+    # Display name
+    name = "About"
 
-# Add additional social link entries underneath
-[social]
-    twitter  = "https://twitter.com/amast09"
-    github   = "https://www.github.com/amast09"
+    # Weights are used to determine the ordering
+    weight = 1
+
+  [[menu.main]]
+    # Unique identifier for a menu item
+    identifier = "posts"
+
+    url = "/blog/"
+    
+    # You can add extra information before the name (HTML format is supported), such as icons
+    pre = "<span data-feather='book'></span>"
+
+    # You can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+
+    # Display name
+    name = "Posts"
+
+    # Weights are used to determine the ordering
+    weight = 2
+
+  [[menu.main]]
+    # Unique identifier for a menu item
+    identifier = "projects"
+
+    url = "/projects/"
+    
+    # You can add extra information before the name (HTML format is supported), such as icons
+    pre = "<span data-feather='code'></span>"
+
+    # You can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+
+    # Display name
+    name = "Projects"
+
+    # Weights are used to determine the ordering
+    weight = 3
+    
+  [[menu.main]]
+    identifier = "github"
+    url = "https://github.com/amast09"
+    weight = 4
+    
+    name = "Github"
+
+    # We use feather-icons: https://feathericons.com/
+    pre = "<span data-feather='github'></span>"
+
+  [[menu.main]]
+    identifier = "linkedin"
+    url = "https://linkedin.com/in/aaronamast"
+    weight = 4
+    
+    name = "LinkedIn"
+
+    # We use feather-icons: https://feathericons.com/
+    pre = "<span data-feather='linkedin'></span>"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,10 +1,11 @@
-+++
-date = "2017-11-30T21:00:35-05:00"
-title = "Command Line Apple Pay CSR's"
-description = "Creating Apple Pay, Payment Processing Certificate Requests from the Command Line"
-tags = [ "openssl", "ios" ]
-categories = [ "Development", "iOS", "How To" ]
-+++
+---
+date: "2017-11-30T21:00:35-05:00"
+title: "Command Line Apple Pay CSR's"
+description: "Creating Apple Pay, Payment Processing Certificate Requests from the Command Line"
+tags: [ "openssl", "ios" ]
+categories: [ "Development", "iOS", "How To" ]
+type: "post"
+---
 
 Setting up Apple Pay is a simple process when using a payment processor that accepts Apple Pay (Square, Stripe, ect).
 

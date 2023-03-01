@@ -1,10 +1,11 @@
-+++
-date = "2017-09-30T17:34:18-04:00"
-title = "Using async.js to Juggle Asynchronous Actions"
-description = "Using the async.js JavaScript library to flatten asynchronous callback hell"
-tags = [ "Javascript", "async.js", "asynchronous" ]
-categories = [ "Development", "Javascript", "How To" ]
-+++
+---
+date: "2017-09-30T17:34:18-04:00"
+title: "Using async.js to Juggle Asynchronous Actions"
+description: "Using the async.js JavaScript library to flatten asynchronous callback hell"
+tags: [ "Javascript", "async.js", "asynchronous" ]
+categories: [ "Development", "Javascript", "How To" ]
+type: "post"
+---
 
 JavaScript that has dependent asynchronous calls has a tendency to turn into
 callback hell spaghetti code.

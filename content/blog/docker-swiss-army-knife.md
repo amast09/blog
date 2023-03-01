@@ -1,10 +1,11 @@
-+++
-date = "2017-10-30T20:36:35-05:00"
-title = "Docker the Swiss Army Knife"
-description = "Using Docker in creative ways to solve developer problems."
-tags = [ "Docker", "Software Development" ]
-categories = [ "Docker", "How To" ]
-+++
+---
+date: "2017-10-30T20:36:35-05:00"
+title: "Docker the Swiss Army Knife"
+description: "Using Docker in creative ways to solve developer problems."
+tags: [ "Docker", "Software Development" ]
+categories: [ "Docker", "How To" ]
+type: "post"
+---
 
 Docker is a very powerful container technology and is a joy to work with.
 

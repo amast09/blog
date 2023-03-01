@@ -1,30 +1,14 @@
-+++
-date = "2017-06-11T16:02:04-05:00"
-title = "About"
-hidden = true
-menu = "main"
-
-+++
-
-Aaron Mast is an experienced Software Engineer living in sunny Charleston South Carolina. He enjoys taking his dog to
-the beach, running, and writing code.
-
-Checkout some of the projects/apps I have built.
-
+---
+date: "2017-06-11T16:02:04-05:00"
+title: "About"
+type: "page"
 ---
 
-## Portfolio Rebalancer
 
-An application to help determine asset purchases/sales to align with a targeted asset allocation
+Hi there :wave:, my name is Aaron Mast and I am a remote software engineer.
 
-[https://portfoliorebalancer.app/](https://portfoliorebalancer.app/)
+I am a product focused, pragmatic and passionate engineer. I take pride in writing well tested, flexible, extensible, and performant software.
 
-[Github](https://github.com/amast09/portfolio-rebalancer)
+I love learning new things, writing tests, and building stuff.
 
-## Debt Free Calculator
-
-An application to visualize debt pay down strategies.
-
-[https://debtfreecalculator.app/](https://debtfreecalculator.app/)
-
-[Github](https://github.com/amast09/debt-free-calculator)
+In my spare time I enjoy distance running, watching college football and going to the beach with my dog.

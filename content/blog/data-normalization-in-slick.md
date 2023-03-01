@@ -1,10 +1,11 @@
-+++
-date = "2018-01-21T11:28:35-05:00"
-title = "Scala Database Normalization using Slick"
-description = "Use Slick to work with normalized database data in Scala"
-tags = [ "Scala", "Slick", "Database" ]
-categories = [ "Development", "Scala", "How To" ]
-+++
+---
+date: "2018-01-21T11:28:35-05:00"
+title: "Scala Database Normalization using Slick"
+description: "Use Slick to work with normalized database data in Scala"
+tags: [ "Scala", "Slick", "Database" ]
+categories: [ "Development", "Scala", "How To" ]
+type: "post"
+---
 
 When designing data schemas it is very important to normalize many to many data relationships.
 

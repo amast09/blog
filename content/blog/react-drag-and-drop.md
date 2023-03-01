@@ -1,10 +1,11 @@
-+++
-date = "2017-06-24T11:14:35-05:00"
-title = "React Drag and Drop"
-description = "Implementing a simple generic order-able list using react-dnd"
-tags = [ "react", "react-dnd", "Javascript" ]
-categories = [ "Development", "Javascript", "How To" ]
-+++
+---
+date: "2017-06-24T11:14:35-05:00"
+title: "React Drag and Drop"
+description: "Implementing a simple generic order-able list using react-dnd"
+tags: [ "react", "react-dnd", "Javascript" ]
+categories: [ "Development", "Javascript", "How To" ]
+type: "post"
+---
 
 I recently needed to implement an order-able list using react for a project.
 Of course the first thing I did was look for drag and drop libraries to help.

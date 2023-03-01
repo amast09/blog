@@ -1,10 +1,11 @@
-+++
-date = "2017-08-29T21:37:16-05:00"
-title = "Creating a Stock Market Trading Bot Using Akka Streams"
-description = "Example usage of Akka Streams to solve complex asynchronous problems."
-tags = [ "akka", "streams", "Scala" ]
-categories = [ "Development", "Scala", "How To" ]
-+++
+---
+date: "2017-08-29T21:37:16-05:00"
+title: "Creating a Stock Market Trading Bot Using Akka Streams"
+description: "Example usage of Akka Streams to solve complex asynchronous problems."
+tags: [ "akka", "streams", "Scala" ]
+categories: [ "Development", "Scala", "How To" ]
+type: "post"
+---
 
 To provide an interesting example of utilizing a subset of Akka's streaming capabilities I am going to show how to make
 a simple fictitious stock market trading bot controlled by some form of an API endpoint.

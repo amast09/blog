@@ -4,6 +4,7 @@ description: "A quick intro to some basic React Hooks APIs"
 tags: [ "Javascript", "react", "hooks" ]
 categories: [ "Development", "Javascript", "How To" ]
 date: 2019-05-11T10:54:00-04:00
+type: "post"
 ---
 
 With the release of React 16.8, React Hooks are now available in a stable
