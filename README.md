@@ -19,3 +19,6 @@ $ hugo server -D
 ```bash
 $ hugo new blog/new-post.md
 ```
+
+## Deployment
+Automatically deploys via Vercel
